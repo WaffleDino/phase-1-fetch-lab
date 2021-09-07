@@ -5,7 +5,10 @@ function fetchBooks() {
       console.log(response);
       return response.json();
     })
-    .then(json => renderBooks(json))
+    .then(function (json) {
+      renderBooks(json);
+      console.log(json);
+    })
 }
 
 function renderBooks(books) {
@@ -20,4 +23,4 @@ function renderBooks(books) {
 document.addEventListener('DOMContentLoaded', function() {
   fetchBooks() 
 });
-
+renderBooks();
